@@ -1,0 +1,371 @@
+/*
+ * MVN University Alumni Showcase - style.css
+ * Design Reference: Clean institutional layout, Professional academic look.
+ * Colors: White, Light Grey, Navy/Blue, Red (Accent).
+ */
+
+/* --- Variables and Reset --- */
+:root {
+    --color-navy: #001f3f; /* Primary Blue/Navy */
+    --color-blue: #0074D9; /* Secondary Blue */
+    --color-red-accent: #FF4136; /* Accent Red (rarely) */
+    --color-white: #ffffff;
+    --color-light-grey: #f4f4f9; /* Light background for sections */
+    --color-dark-grey: #333333;
+    --color-text: #444444;
+    --font-family-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --shadow-soft: 0 4px 12px rgba(70, 130, 180, 0.4);
+    --border-radius-card: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+/* --- Header (University Branding) --- */
+.university-header {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    padding: 15px 0;
+    box-shadow: var(--shadow-soft);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    border-radius: 2px;
+}
+
+.university-header nav a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.university-header nav a:hover,
+.university-header nav a.active {
+    color: var(--color-red-accent);
+}
+
+/* --- Main Layout --- */
+.alumni-showcase-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Hero Section (Updated Background Color) --- */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    /* Changed background color to a lighter blue/grey for visibility */
+    background-color: #e6f0ff; /* Very light blue */
+    border-radius: var(--border-radius-card);
+    margin-bottom: 40px;
+    border: 1px solid #cce0ff;
+}
+
+.hero-section h2 {
+    color: var(--color-navy);
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.1em;
+    color: var(--color-dark-grey);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Filter Section --- */
+.filter-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.filter-section h3 {
+    color: var(--color-navy);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filter-btn {
+    background-color: var(--color-white);
+    color: var(--color-navy);
+    border: 2px solid var(--color-navy);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+.filter-btn.active {
+    background-color: var(--color-blue);
+    border-color: var(--color-blue);
+    color: var(--color-white);
+    box-shadow: 0 2px 8px rgba(0, 116, 217, 0.4);
+}
+
+/* --- Alumni Cards Grid --- */
+.alumni-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.alumni-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-soft);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+/* Card Hover Effect: Lighten background */
+.alumni-card:hover {
+    background-color: var(--color-light-grey); /* Lighten effect */
+    transform: translateY(-3px); /* Subtle lift */
+    box-shadow: 0 8px 20px rgba(70, 130, 180, 0.6);
+}
+
+/* --- Alumni Card Header (Photo and Name) --- */
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.alumni-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid var(--color-blue);
+    flex-shrink: 0;
+}
+
+.alumni-info h4 {
+    font-size: 1.4em;
+    color: var(--color-navy);
+    margin-bottom: 5px;
+    font-weight: 700; /* Student name (bold) */
+}
+
+.alumni-info p {
+    font-size: 0.9em;
+    color: var(--color-dark-grey);
+}
+
+/* --- Alumni Card Body (Placement Details) --- */
+.card-body {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+/* Concise placement details and minimized line gap */
+.placement-detail {
+    margin-bottom: 5px; /* Reduced margin */
+    font-size: 0.95em;
+    line-height: 1.3;
+}
+
+.placement-detail strong {
+    color: var(--color-navy);
+    font-weight: 600;
+}
+
+.package-badge {
+    display: inline-block;
+    background-color: var(--color-red-accent);
+    color: var(--color-white);
+    padding: 3px 8px; /* Smaller padding */
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85em; /* Smaller font */
+    margin-left: 5px;
+    letter-spacing: 0.5px;
+}
+
+/* --- Alumni Feedback (Quote Style) --- */
+.alumni-feedback {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: var(--color-light-grey);
+    border-left: 4px solid var(--color-blue);
+    border-radius: 0 0 var(--border-radius-card) var(--border-radius-card);
+    font-style: italic;
+    color: var(--color-dark-grey);
+    font-size: 0.95em;
+}
+
+.see-more-btn {
+    background: none;
+    border: none;
+    color: var(--color-blue);
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 5px;
+    display: block;
+    text-align: right;
+}
+
+/* --- Card Footer (LinkedIn) --- */
+.card-footer {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.linkedin-link {
+    color: var(--color-blue);
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.linkedin-link:hover {
+    color: var(--color-navy);
+}
+
+/* --- Utility Classes --- */
+.hidden {
+    display: none !important;
+}
+
+.loading-message, .no-results-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: var(--color-dark-grey);
+}
+
+/* --- Show More Button Container --- */
+.show-more-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* --- Footer --- */
+.university-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: var(--color-navy);
+    color: var(--color-light-grey);
+    font-size: 0.9em;
+}
+
+/* --- Back to Top Button --- */
+#back-to-top-btn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--color-red-accent);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+#back-to-top-btn:hover {
+    background-color: #cc332b;
+}
+
+/* --- Responsiveness (Mobile First) --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .university-header nav {
+        margin-top: 10px;
+    }
+
+    .university-header nav a {
+        margin: 0 10px;
+    }
+
+    .hero-section {
+        padding: 40px 15px;
+    }
+
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    .alumni-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+    
+    #back-to-top-btn {
+        padding: 10px;
+        font-size: 16px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .alumni-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

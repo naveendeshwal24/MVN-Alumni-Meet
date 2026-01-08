@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVN University - Alumni & Placement Showcase</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons (LinkedIn, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header/Navbar Placeholder (To visually blend with existing university website) -->
+    <header class="university-header">
+        <div class="header-content">
+            <img class="logo" src="/assets/images/logo.png" alt="University Logo" style="height: 40px; margin-right: 10px;">
+            <!-- <h1 class="logo">MVN University</h1> -->
+            <nav>
+                <!-- Placeholder for existing university navigation links  and these are dummy and changable-->
+                <a href="#">Home</a>
+                <a href="#">Admissions</a>
+                <a href="#" class="active">Alumni</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Marquee for Registration Link - Customizable -->
+    <marquee behavior="scroll" direction="left"
+        style="background-color: #ffcc00; padding: 5px; color: #333; font-weight: bold;">
+        <a href="https://forms.gle/6w4Chxf7rY6fNAmJ9" target="_blank" style="color: #333; text-decoration: none;">
+            📢 Register Now for the Alumni Meet! Click here to avail the registration link!
+        </a>
+    </marquee>
+
+    <main class="alumni-showcase-container">
+        <section class="hero-section">
+            <h2>Our Success Stories: Alumni Placements & Achievements</h2>
+            <p>Building trust and showcasing the impact of an MVN University education. Our graduates are making a
+                difference globally.</p>
+        </section>
+
+        <section class="filter-section">
+            <h1>Departments</h1>
+            <div id="department-filters" class="filter-buttons">
+                <!-- Department buttons are now static as requested -->
+                <button class="filter-btn active" data-department="All">All Departments</button>
+                <button class="filter-btn" data-department="SOET">SOET</button>
+                <button class="filter-btn" data-department="LAW">LAW</button>
+                <button class="filter-btn" data-department="SOPS">SOPS</button>
+                <button class="filter-btn" data-department="SASH">SASH</button>
+                <button class="filter-btn" data-department="SBMC">SBMC</button>
+                <button class="filter-btn" data-department="SOSAH">SOSAH</button>
+                <button class="filter-btn" data-department="SOA">SOA</button>
+            </div>
+        </section>
+
+        <section class="alumni-cards-section">
+            <div id="alumni-cards-grid" class="alumni-cards-grid">
+                <!-- Alumni cards will be dynamically populated by JavaScript -->
+                <p class="loading-message">Loading alumni data...</p>
+            </div>
+
+            <!-- Show More Button Placeholder -->
+            <div class="show-more-container">
+                <button id="show-more-btn" class="filter-btn hidden">Show More Placements</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="university-footer">
+        <p>&copy; <span id="current-year"></span> MVN University. All rights reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top-btn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
